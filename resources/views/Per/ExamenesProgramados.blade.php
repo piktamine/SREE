@@ -7,7 +7,7 @@
 
         @include('Plantillas.header')
 
-       @if(!isset($examenes))
+       @if(isset($examenes))
         <div class="row mt-5">
             <div class="container">
 
@@ -144,7 +144,8 @@
             </div>
         </div>
         
-        @else
+        @elseif(!isset($examenes))
+           
             <div class="container mt-5">
                 <div class="card">
                     <div class="card-body text-center align-items-center justify-content-center">

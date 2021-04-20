@@ -125,7 +125,7 @@
                                              {{route('secppc',$al)}}
                                          @endrole
                                          @role('jefearea')
-                                             {{route('secppe',$al)}}
+                                             {{route('secppj',$al)}}
                                          @endrole
                                          " class="btn btnFinalizar">
                                     @if($r->resServicio1==null){{-- para verificar seccion PP --}}
@@ -165,7 +165,7 @@
                                              {{route('secegelc',$al)}}
                                          @endrole
                                          @role('jefearea')
-                                             {{route('secegele',$al)}}
+                                             {{route('secegelj',$al)}}
                                          @endrole
                                          " class="btn btnFinalizar">
                                     @if($r->resArea1==null){{-- para verificar seccion Egel --}}

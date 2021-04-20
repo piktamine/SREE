@@ -3,6 +3,21 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
+use Spatie\Permission\Models\Role;
+use Spatie\Permission\Models\Permission;
+use Illuminate\Support\Facades\Auth;
+//use Illuminate\Support\Facades\Cookie;
+use App\Models\EGEL;
+use App\Models\User;
+use App\Models\Profesor;
+use App\Models\ExamenProfesional;
+use App\Models\RegistroSinodal;
+use App\Models\Alumno;
+use App\Models\Cuestionario;
+use App\Models\Kardex;
+use App\Models\RespuestasCuestionario;
+//use Cookie;
 
 class CapturistaController extends Controller
 {

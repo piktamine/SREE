@@ -23,4 +23,4 @@ Route::get('/jefearea/mostrarexamenesprofesionales/{clave}/secegel/',[JefeareaCo
 Route::post('/jefearea/mostrarexamenesprofesionales/{clave}/secegel/guardar',[JefeareaController::class,'guardarsecegel'])->middleware('role:jefearea')->name('guardarsecegelj');
 
 //Verificar 3 retro alimentaciones
-Route::get('/jefearea/mostrarexamenesprofesionales/{clave}/verificarretro',[JefeareaController::class,'verifretro'])->middleware('role:jefearea')->name('verifretro');
+Route::get('/jefearea/mostrarexamenesprofesionales/{clave}/verificarretro',[JefeareaController::class,'verifretro'])->middleware('role:jefearea')->name('verifretroj');

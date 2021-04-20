@@ -18,7 +18,7 @@ use App\Models\Alumno;
 use App\Models\Cuestionario;
 use App\Models\Kardex;
 use App\Models\RespuestasCuestionario;
-use Cookie;
+//use Cookie;
 //use Symfony\Component\HttpFoundation\Cookie;
 //use App\Models\;
 
