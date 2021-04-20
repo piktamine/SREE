@@ -1,0 +1,128 @@
+.titles {
+    font-weight: bold;
+    text-align: center;
+}
+
+.text {
+    font-weight: 475;
+    text-align: center;
+}
+
+[class*="answer"] {
+    border-color: white;
+    border-width: 0px;
+    border-bottom-color: rgb(206, 206, 206);
+    border-bottom-width: 1px;
+}
+
+.answer {
+    width: 70em;
+}
+
+.answer-2 {
+    width: 50em;
+}
+
+.btnFinalizar {
+    border: 1px solid #19315a;
+    font-weight: bold;
+    color: #19315a;
+    padding-right: 15%;
+    padding-left: 15%;
+}
+
+.btnFinalizar:hover{
+    color: white;
+    background-color: #19315a;
+}
+
+.btnBorrar{
+    border: 1px solid red;
+    font-weight: bold;
+    color: red;
+    padding-right: 15%;
+    padding-left: 15%; 
+}
+
+.btnBorrar:hover{
+    color: white;
+    background-color: red;
+}
+
+.centrador{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.header{
+    background-color: #1B3257;
+}
+
+.lineaBlanca{
+    width: 1px;
+    height: 80%;
+    background-color: white;
+}
+
+.divAzul{
+    width: 60%;
+    background-color: #1B3257;
+}
+
+.divAmarillo{
+    width: 40%;
+    background-color: #FCC200;
+    border-left: 20px solid #1B3257;
+    border-top: 16px solid transparent;
+    border-bottom: 16px solid transparent;
+}
+
+.centrador{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (max-width: 767px) {
+    .logoUaslp{
+        width: 121px;
+        height: 50px;
+    }
+    .logoIng{
+        width: 130px;
+        height: 50px;
+    }
+}
+
+@media (max-width: 1199px){
+    .lineaBlanca{
+        display: none;
+    }
+}
+
+.txtUaslp{
+    color: #666;
+    font-weight: bold;
+}
+
+.txtUniversidad{
+    color: #666;
+    font-weight: bold;
+    font-size: 0.8em;
+}
+
+.txt{
+    color: #6F6F6F;
+    font-size: 0.8em;
+}
+
+.footer{
+    margin-top: 11%;
+}
+
+.textoSeccion{
+    font-size: 1.2em;
+    color: black;
+    font-weight: bold;
+}

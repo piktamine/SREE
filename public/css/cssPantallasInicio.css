@@ -1,0 +1,17 @@
+.nombrePag{
+    color: white;
+    font-size: 1.5em;
+    padding-top: 1.5%;
+}
+
+.txtIdentificado{
+    font-size: 1.5em;
+    text-align: center;
+}
+
+.boton{
+    border: 1px solid gray;
+    width: 80%;
+    font-weight: bold;
+    color: #19315a;
+}

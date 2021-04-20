@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        @include('Plantillas.head',['titulo' => 'SREE - Examenes agendados'])
+    </head>
+    <body>
+
+        @include('Plantillas.header')
+
+        <div class="row m-0 p-0 mt-5">
+            <div class="container">
+
+                @php
+                    $prol = Auth::user()->roles->pluck('name');//obtiene arreglo con el rol
+                    $rol = $prol[0];//arreglo a string
+                @endphp
+
+                @if($rol=='sinodal' || $rol=='jefearea' || $rol=='coordinador')
+                    <div class="row text-center align-items-center justify-content-center">
+                        <div class="col-md-4">
+                            <img src="{{ asset('perfil.jpg') }}" class="centrador" alt="..." width="200">
+                        </div>
+                        <div class="col-8">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="row">
+                                        <p>Información del Usuario
+                                        </p>
+                                    </div>
+                                    <div class="row">
+                                        <p><strong>Nombre:</strong>
+                                            {{ Auth::user()->name }}
+                                        </p>
+                                    </div>
+                                    <div class="row">
+                                        <p><strong>Email:</strong>
+                                            {{ Auth::user()->email }}
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="row">
+                                        <p><strong>Fecha:</strong>
+                                            {{ date('d-m-Y') }}
+                                        </p>
+                                    </div>
+                                    <div class="row">
+                                        <p><strong>Hora:</strong>
+                                            {{ date('H:i:s') }}
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <div class="row mt-5">
+
+                        @foreach($sinodales as $s)
+                            @foreach($examenes as $e)
+                                @if($e->idExamen == $s->idExamen && !$e->realizoCuestionario) 
+                                    @foreach($alumnos as $a)
+                                        @if($e->claveAlumno==$a->claveAlumno)
+                                            @php
+                                                $alum = $a;
+                                            @endphp
+                                            @break
+                                        @endif
+                                    @endforeach   
+
+                                    <div class="card w-100">        
+                                        <div class="card-body">
+                                            <div class="row">
+
+                                                <!--Los datos a continuación serian los del usuario-->
+                                                <div class="col-md-3">
+                                                    <img class="centrador" src="{{ asset('foto.png') }}" height="100px" width="100px" id="foto"><!-- extraer de la api -->
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <p><strong>Nombre:</strong><!-- Nombre de el alumno de ese examen --> 
+                                                        {{ $alum->nombre }}
+                                                    </p>
+
+                                                    <p style="font-size: medium;" id="correo"><strong>Carrera:</strong>
+                                                        {{ $alum->carrera }}
+
+                                                    </p>
+
+                                                    <p style="font-size: medium;" id="correo">
+
+                                                        <strong>Fecha de inicio:</strong> 
+
+                                                        {{ $e->fechaExamen }} - {{ $e->horaExamen }}
+                                                    </p>
+
+                                                    <p style="font-size: medium;" id="correo"><strong>Fecha limite:</strong>
+
+                                                        {{ $e->fechaExamen }} -
+
+                                                        {{$e->horaExamen = date('H:i:s', strtotime($e->horaExamen.'+1 hour')) }}
+
+
+                                                    </p>
+
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <!-- Datos enviados previamento -->
+                                                    <div class="row align-items-center h-100">
+                                                        <div class="col-6">
+                                                            <a href="
+                                                                     @role('sinodal')
+                                                                         {{route('retro',$alum)}}
+                                                                     @endrole
+                                                                     @role('coordinador')
+                                                                         {{route('retroc',$alum)}}
+                                                                     @endrole
+                                                                     @role('jefearea')
+                                                                         {{route('retroj',$alum)}}
+                                                                     @endrole
+                                                                     ">
+                                                                <button class="btn btnFinalizar">
+                                                                    Iniciar con la retroalimentación
+                                                                </button>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>         
+                                    @endif                                                                                   
+
+                                @endforeach                                                
+                            @endforeach
+
+                        </div>
+                    @endif
+
+                </div>
+            </div>
+        </div>
+
+        <div class="row m-0 p-0 text-center align-items-center justify-content-center mt-5">
+            <a href="
+                @role('sinodal')
+                    {{route('sinodal')}}
+                @endrole
+                @role('coordinador')
+                    {{route('coordinador')}}
+                @endrole
+                @role('jefearea')
+                    {{route('jefearea')}}
+                @endrole
+                ">
+                    <button class="btn btnFinalizar">
+                        Regresar
+                    </button>
+            </a>
+        </div>
+
+        @include('Plantillas.footer')
+    </body>
+</html>

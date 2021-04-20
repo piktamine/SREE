@@ -1,0 +1,34 @@
+.nombrePag{
+    color: white;
+    font-size: 1.5em;
+    padding-top: 1.5%;
+}
+
+.texto{
+    font-size: 1.5em;
+    text-align: center;
+}
+
+.textoSeccion{
+    font-size: 1.2em;
+    text-align: center;
+    font-weight: 500;
+}
+
+.selPuntaje{
+    border: none;
+    border-radius: 0;
+    border-bottom: 1px solid gray;
+}
+
+.btnFinalizar{
+    border: 1px solid #19315a;
+    font-weight: bold;
+    color: #19315a;
+    padding-right: 3%;
+    padding-left: 3%;
+}
+
+.selectCarrera{
+    width: 30%;
+}
