@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
+use PDF;
 
 class GeneralController extends Controller
 {
@@ -29,5 +30,13 @@ class GeneralController extends Controller
 
     public function coor(){
         return view ('InicioCoordinador');
+    }
+    public function reporte(){
+        //$pdf = PDF::loadHTML('<h1>test</h1>');
+        $pdf = PDF::loadView('reporte');
+
+        return $pdf->stream();
+        //return $pdf->download();
+        //return view('reporte');
     }
 }

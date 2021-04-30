@@ -27,11 +27,4 @@ Route::get('/coordinador',[GeneralController::class,'coor'])
 ->name('coordinador');
 
 //prueba PDF
-Route::get('/reportestest',function(){
-    //$pdf = PDF::loadHTML('<h1>test</h1>');
-    $pdf = PDF::loadView('reporte');
-    
-    return $pdf->stream();
-    //return $pdf->download();
-    //return hola;
-});
+Route::get('/reporte',[GeneralController::class,'reporte']);
