@@ -32,6 +32,7 @@ class GeneralController extends Controller
         return view ('InicioCoordinador');
     }
     public function reporte(){
+        
         //$pdf = PDF::loadHTML('<h1>test</h1>');
         $pdf = PDF::loadView('reporte');
 

@@ -16,7 +16,7 @@
                 <a href="{{route('verexamenc')}}" class="btn boton">Ver Exámenes</a>
             </div>
             <div class="row justify-content-center mt-4">
-                <a href="{{route('genrepc')}}" class="btn boton">Generar Reportes</a>
+                <a href="{{route('reportesc')}}" class="btn boton">Generar Reportes</a>
             </div> 
             <div class="row justify-content-center mt-4">
                 @include('Plantillas.cerrarsesion')

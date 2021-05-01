@@ -27,6 +27,5 @@ Route::post('/coordinador/mostrarexamenesprofesionales/{clave}/secegel/guardar',
 //Verificar 3 retro alimentaciones
 Route::get('/coordinador/mostrarexamenesprofesionales/{clave}/verificarretro',[CoordinadorController::class,'verifretro'])->middleware('role:coordinador')->name('verifretroc');
 
-//REPORTES
-Route::view('/coordinador/generarreportes','Per.Generacion_Reportes')
-->name('genrepc');
+//Reportes
+Route::get('/sinodal/Reportes',[SinodalController::class,'reportes'])->middleware('role:sinodal')->name('reportesc');

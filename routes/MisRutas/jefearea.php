@@ -24,3 +24,6 @@ Route::post('/jefearea/mostrarexamenesprofesionales/{clave}/secegel/guardar',[Je
 
 //Verificar 3 retro alimentaciones
 Route::get('/jefearea/mostrarexamenesprofesionales/{clave}/verificarretro',[JefeareaController::class,'verifretro'])->middleware('role:jefearea')->name('verifretroj');
+
+//Reportes
+Route::get('/sinodal/Reportes',[SinodalController::class,'reportes'])->middleware('role:sinodal')->name('reportesj');
