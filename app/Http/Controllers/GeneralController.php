@@ -44,7 +44,17 @@ class GeneralController extends Controller
     public function hacerReporte(Request $request){
         /*
         for(){
-            $dato->
+            $datos = [
+                clave => [],
+                nombre => [],
+                filtro => [],
+                carrera => [],
+                gen_i => [],
+                gen_f => [],
+                area1 => [],
+                generacion1 => [],
+                puntaje1 => [],
+            ] 
         }
         */
         return $request;

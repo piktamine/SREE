@@ -57,6 +57,8 @@
                     <hr>
 
                     <div class="row mt-5">
+                        
+                        @if(empty($sinodales) || empty($examenes))
 
                         @foreach($sinodales as $s)
                             @foreach($examenes as $e)
@@ -134,6 +136,10 @@
 
                                 @endforeach                                                
                             @endforeach
+                            
+                            @else
+                                <div class="row mx-auto">No Existen cuestionarios por validar</div>
+                            @endif
 
                         </div>
                     @endif
