@@ -52,8 +52,23 @@ class GeneralController extends Controller
                 gen_i => [],
                 gen_f => [],
                 area1 => [],
+                area2 => [],
+                area3 => [],
                 generacion1 => [],
+                generacion2 => [],
+                generacion3 => [],
                 puntaje1 => [],
+                puntaje2 => [],
+                puntaje3 => [],
+                r1 => [],
+                r2 => [],
+                r3 => [],
+                r4 => [],
+                r5 => [],
+                r6 => [],
+                r7 => [],
+                r8 => [],
+                r9 => [],
             ] 
         }
         */

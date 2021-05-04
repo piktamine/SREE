@@ -57,8 +57,8 @@
     </head>
     <body>
       
-       @if(isset($datos))
-        @foreach($datos as $d)
+       {{--@if(isset($datos))--}}
+        {{--@foreach($datos as $d)--}}
         <div class="tamcarta">
         <table> 
             <tr>
@@ -80,7 +80,7 @@
                 <th colspan="3" class="th">
                     <div id="t1r2">
                         <div class="r2" style="width:80px;height:auto;display:inline-block;">
-                            <img src="badfoto.png" width="80px" style="padding-left:40px;">
+                            <img src="foto.png" width="80px" style="padding-left:40px;">
                         </div>
                         <div class="r2" style="padding-left:10px;width:180px;display:inline-block;padding-left:40px;">
                             <p style="text-align: left;">Clave de usuario: 
@@ -165,10 +165,12 @@
         </table>
         </div>
         
-    @endforeach
+    {{--@endforeach--}}
+    {{-- 
     @else
         No existen datos para generar el reporte
     @endif
+    --}}
     </body>
 </html>
 
