@@ -31,6 +31,7 @@ class GeneralController extends Controller
     public function coor(){
         return view ('InicioCoordinador');
     }
+    
     public function reporte(){
         
         //$pdf = PDF::loadHTML('<h1>test</h1>');
@@ -39,5 +40,13 @@ class GeneralController extends Controller
         return $pdf->stream();
         //return $pdf->download();
         //return view('reporte');
+    }
+    public function hacerReporte(Request $request){
+        /*
+        for(){
+            $dato->
+        }
+        */
+        return $request;
     }
 }

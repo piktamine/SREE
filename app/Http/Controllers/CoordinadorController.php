@@ -182,4 +182,8 @@ class CoordinadorController extends Controller
         return redirect(route('retroc',$request->clave));
         //return $request;
     }
+    //REPORTES
+    public function reportes(){
+        return view('Per.Generacion_Reportes');
+    }
 }

@@ -181,4 +181,15 @@ class JefeareaController extends Controller
         return redirect(route('retroj',$request->clave));
         //return $request;
     }
+    public function reportes(){
+        return view('Per.Generacion_Reportes');
+    }
+    public function hacerReporte(Request $request){
+        /*
+        for(){
+            $dato->
+        }
+        */
+        return $request;
+    }
 }

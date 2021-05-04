@@ -195,7 +195,4 @@ class SinodalController extends Controller
         return redirect(route('retro',$request->clave));
         //return $request;
     }
-    public function reportes(){
-        return view('Per.Generacion_Reportes');
-    }
 }

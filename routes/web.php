@@ -24,7 +24,12 @@ Route::get('/sinodal',[GeneralController::class,'sin'])
 Route::get('/jefearea',[GeneralController::class,'jef'])
 ->middleware('role:jefearea')->name('jefearea');
 Route::get('/coordinador',[GeneralController::class,'coor'])
-->name('coordinador');
+->middleware('role:coordinador')->name('coordinador');
 
 //prueba PDF
 Route::get('/reporte',[GeneralController::class,'reporte']);
+
+//Reportes
+Route::get('/HacerReporte',[GeneralController::class,'hacerReporte'])
+    ->middleware('role:coordinador|jefearea')
+    ->name('hacerreporte');

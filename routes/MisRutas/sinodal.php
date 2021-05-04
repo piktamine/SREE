@@ -25,4 +25,3 @@ Route::post('/sinodal/mostrarexamenesprofesionales/{clave}/secegel/guardar',[Sin
 //Verificar 3 retro alimentaciones
 Route::get('/sinodal/mostrarexamenesprofesionales/{clave}/verificarretro',[SinodalController::class,'verifretro'])->middleware('role:sinodal')->name('verifretro');
 
-
