@@ -11,9 +11,9 @@
             <div class="container mt-5">
                 <h5 class="titles">Generar reporte</h5>
             </div>
-            <div class="container mt-4" id="usuario">
+            {{--<div class="container mt-4" id="usuario">
                 <p class="text">Identificado cómo: </p> <!--Aqui va el tipo de usuario que ha accedido-->
-            </div>
+            </div>--}}
 
             <div class="container mt-5">
                 <form action="{{route('hacerreporte')}}" method="get">
@@ -64,25 +64,8 @@
                     <div class="row">
                         <div class="col">
                             <p class="text">
-                                Inicio de generación:
-                                <select name="inigen">
-                                    <option value="2013">2013</option>
-                                    <option value="2014">2014</option>
-                                    <option value="2015">2015</option>
-                                    <option value="2016">2016</option>
-                                    <option value="2017">2017</option>
-                                    <option value="2018">2018</option>
-                                    <option value="2019">2019</option>
-                                    <option value="2020">2020</option>
-                                    <option value="2021">2021</option>
-                                    <option value="2022">2022</option>
-                                </select>
-                            </p>
-                        </div>
-                        <div class="col">
-                            <p class="text">
-                                Fin de generación:
-                                <select name="fingen">
+                                generación:
+                                <select name="gen">
                                     <option value="2017">2017</option>
                                     <option value="2018">2018</option>
                                     <option value="2019">2019</option>
@@ -99,23 +82,7 @@
                     </div>
                     <hr style="border-color: black;">
                 </div>
-                <div class="container mt-3">
-                    <p class="text">Datos a incluir</p>
-                    <div class="row">
-                        <p class="text">
-                        <div class="col text">
-                            <input type="radio" name="data" value="retro"> Solo retroalimentación
-                        </div>
-                        <div class="col text">
-                            <input type="radio" name="data" value="egel"> Solo EGEL
-                        </div>
-                        <div class="col text">
-                            <input type="radio" name="data" value="ambos"> Ambos
-                        </div>
-                        </p>
-                </div>
-                <hr style="border-color: black;">
-            </div>
+                
             <div class="container mt-3">
                 <p class="text">Formato del reporte</p>
                 <div class="row">

@@ -57,8 +57,8 @@
     </head>
     <body>
       
-       {{--@if(isset($datos))--}}
-        {{--@foreach($datos as $d)--}}
+       @if(isset($datos))
+        @foreach($datos as $d)
         <div class="tamcarta">
         <table> 
             <tr>
@@ -69,7 +69,7 @@
                     <p>UNIVERSIDAD AUTONOMA DE SAN LUIS POTOSI <br>
                         FACULTAD DE INGENIERIA <br>
                         AREA DE CIENCIAS DE LA COMPUTACION <br>
-                        SRRE
+                        SREE
                     </p>
                 </td>
                 <td>
@@ -80,17 +80,17 @@
                 <th colspan="3" class="th">
                     <div id="t1r2">
                         <div class="r2" style="width:80px;height:auto;display:inline-block;">
-                            <img src="foto.png" width="80px" style="padding-left:40px;">
+                            <img src="badfoto.png" width="80px" style="padding-left:40px;">
                         </div>
                         <div class="r2" style="padding-left:10px;width:180px;display:inline-block;padding-left:40px;">
                             <p style="text-align: left;">Clave de usuario: 
                                <label style="color:blue;">
-                               {{$d->clave ?? "-" }}
+                               {{$d['clave'] ?? "-" }}
                                </label><br>
                                 Nombre: 
-                                <label style="color:blue;text-transform:uppercase;">{{$d->nombre ?? "-" }}
+                                <label style="color:blue;text-transform:uppercase;">{{$d['nombre'] ?? "-" }}
                                 </label><br>
-                                Filtrado por: {{$d->filtro ?? "-" }} 
+                                Filtrado por: {{$d['filtro'] ?? "-" }} 
                             </p>
                         </div>
                         <div class="r2" style="display:inline-block;padding-right:160px;">
@@ -120,57 +120,55 @@
             <tbody>
                 <tr>
                     <!--Rowspan debera ir cambiando conformo se agreguen areas-->
-                    <th rowspan="10" id="carrera" class="t">{{$d->carrera ?? "-" }}</th>
-                    <th rowspan="10" id="generacion" class="t">{{$d->gen_i ?? "-" }} - {{$d->gen_f ?? "-" }}</th>
+                    <th rowspan="10" id="carrera" class="t">{{$d['carrera'] ?? "-" }}</th>
+                    <th rowspan="10" id="generacion" class="t">{{$d['gen_i'] ?? "2017" }}</th>
                     <!--Rowspan debera ir cambiando conformo se agreguen respuestas-->
-                    <th rowspan="5" id="area" class="t">{{$d->area1 ?? "-" }}</th>
-                    <th rowspan="5" id="generacion" class="t">{{$d->generacion1 ?? "-" }}</th>
-                    <th rowspan="5" id="puntaje" class="t">{{$d->puntaje1 ?? "-" }}</th>
-                    <th class="t">{{$d->r1 ?? "-" }}</th>
+                    <th rowspan="5" id="area" class="t">{{$d['area1'] ?? "-" }}</th>
+                    <th rowspan="5" id="generacion" class="t">{{$d['generacion1'] ?? "-" }}</th>
+                    <th rowspan="5" id="puntaje" class="t">{{$d['puntaje1'] ?? "-" }}</th>
+                    <th class="t">{{$d['r1'] ?? "-" }}</th>
                 </tr>
                 <tr>
-                    <th class="t">{{$d->r2 ?? "-" }}</th>
+                    <th class="t">{{$d['r2'] ?? "-" }}</th>
                 </tr>
                 <tr>
-                    <th class="t">{{$d->r3 ?? "-" }}</th>
+                    <th class="t">{{$d['r3'] ?? "-" }}</th>
                 </tr>
                 <tr>
-                    <th class="t">{{$d->r4 ?? "-" }}</th>
+                    <th class="t">{{$d['r4'] ?? "-" }}</th>
                 </tr>
                 <tr>
-                    <th class="t">{{$d->r5 ?? "-" }}</th>
+                    <th class="t">{{$d['r5'] ?? "-" }}</th>
                 </tr>
                 <tr>
-                    <th rowspan="2" id="area" class="t">{{$d->area2 ?? "-" }}</th>
-                    <th rowspan="2" id="generacion" class="t">{{$d->generacion2 ?? "-" }}</th>
-                    <th rowspan="2" id="puntaje" class="t">{{$d->puntaje2 ?? "-" }}</th>
-                    <th class="t">{{$d->r6 ?? "-" }}</th>
+                    <th rowspan="2" id="area" class="t">{{$d['area2'] ?? "-" }}</th>
+                    <th rowspan="2" id="generacion" class="t">{{$d['generacion2'] ?? "-" }}</th>
+                    <th rowspan="2" id="puntaje" class="t">{{$d['puntaje2'] ?? "-" }}</th>
+                    <th class="t">{{$d['r6'] ?? "-" }}</th>
                 </tr>
                 <tr>
-                    <th class="t">{{$d->r7 ?? "-" }}</th>
+                    <th class="t">{{$d['r7'] ?? "-" }}</th>
                 </tr> 
                 <tr>
-                    <th rowspan="3" id="area" class="t">{{$d->area3 ?? "-" }}</th>
-                    <th rowspan="3" id="generacion" class="t">{{$d->generacion3 ?? "-" }}</th>
-                    <th rowspan="3" id="puntaje" class="t">{{$d->puntaje3 ?? "-" }}</th>
-                    <th class="t">{{$d->r8 ?? "-" }}</th>
+                    <th rowspan="3" id="area" class="t">{{$d['area3'] ?? "-" }}</th>
+                    <th rowspan="3" id="generacion" class="t">{{$d['generacion3'] ?? "-" }}</th>
+                    <th rowspan="3" id="puntaje" class="t">{{$d['puntaje3'] ?? "-" }}</th>
+                    <th class="t">{{$d['r8'] ?? "-" }}</th>
                 </tr>
                 <tr>
-                    <th class="t">{{$d->r9 ?? "-" }}</th>
+                    <th class="t">{{$d['r9'] ?? "-" }}</th>
                 </tr>
                 <tr>
-                    <th class="t">{{$d->r9 ?? "-" }}</th>
+                    <th class="t">{{$d['r9'] ?? "-" }}</th>
                 </tr>
             </tbody>
         </table>
         </div>
         
-    {{--@endforeach--}}
-    {{-- 
+    @endforeach
     @else
         No existen datos para generar el reporte
     @endif
-    --}}
     </body>
 </html>
 
