@@ -101,5 +101,6 @@ class GeneralController extends Controller
         if($request->formato=='excel'){
             return Excel::download(new ReportesExport, 'reporte.xlsx');
         }
+        return back();
     }
 }
