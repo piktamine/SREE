@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\GeneralController;
+use App\Exports\ReportesExport;
 
 
 //RUTAS LOGIN
@@ -33,3 +34,6 @@ Route::get('/reporte',[GeneralController::class,'reporte']);
 Route::get('/HacerReporte',[GeneralController::class,'hacerReporte'])
     ->middleware('role:coordinador|jefearea')
     ->name('hacerreporte');
+Route::get('excel',function(){
+    return Excel::download(new ReportesExport, 'reporte.xlsx');
+});

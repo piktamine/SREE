@@ -91,7 +91,7 @@
                         <input type="radio" name="formato" value="pdf"> PDF
                     </div>
                     <div class="col text">
-                        <input type="radio" name="formato" value="excel" disabled> Excel
+                        <input type="radio" name="formato" value="excel"> Excel
                     </div>
                     </p>
             </div>
