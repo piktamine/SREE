@@ -14,7 +14,7 @@ use App\Models\User;
 
 class ReportesExport implements FromView
 {
-    public function view(): View
+    public function view($dato): View
     {
         /*
         $examenes_lista = DB::table('examen_profesionals')

@@ -4,8 +4,6 @@
         @include('Plantillas.head',['titulo' => 'SREE - Examenes agendados'])
     </head>
     <body>
-        
-        {{ var_dump($examenes) }}
 
         @include('Plantillas.header')
 
@@ -64,7 +62,7 @@
 
                         @foreach($sinodales as $s)
                             @foreach($examenes as $e)
-                                @if($e->idExamen == $s->idExamen || !$e->realizoCuestionario) 
+                                @if($e->idExamen == $s->idExamen && !$e->realizoCuestionario) 
                                     @foreach($alumnos as $a)
                                         @if($e->claveAlumno==$a->claveAlumno)
                                             @php
