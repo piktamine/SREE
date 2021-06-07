@@ -62,7 +62,7 @@
 
                         @foreach($sinodales as $s)
                             @foreach($examenes as $e)
-                                @if($e->idExamen == $s->idExamen && !$e->realizoCuestionario) 
+                                @if($e->idExamen == $s->idExamen || !$e->realizoCuestionario) 
                                     @foreach($alumnos as $a)
                                         @if($e->claveAlumno==$a->claveAlumno)
                                             @php
