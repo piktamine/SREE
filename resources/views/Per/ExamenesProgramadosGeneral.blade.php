@@ -4,6 +4,8 @@
         @include('Plantillas.head',['titulo' => 'SREE - Examenes agendados'])
     </head>
     <body>
+        
+        {{ var_dump($examenes) }}
 
         @include('Plantillas.header')
 
@@ -58,7 +60,7 @@
 
                     <div class="row mt-5">
                         
-                        @if(empty($sinodales) || empty($examenes))
+                        @if(!empty($sinodales) || !empty($examenes))
 
                         @foreach($sinodales as $s)
                             @foreach($examenes as $e)
