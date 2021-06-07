@@ -54,10 +54,13 @@
             font-weight: normal;
             }*/
         </style>
+        <?php
+            $jpg = file_get_contents("perfil.jpg");
+            $jpgbase64 = base64_encode($jpg);
+        ?>
     </head>
     <body>
         <div class="tamcarta">
-
 
             <table> 
                 <tr>
@@ -79,10 +82,10 @@
                     <th colspan="3" class="th">
                         <div id="t1r2">
                             <div class="r2" style="width:80px;height:auto;display:inline-block;">
-                                
+                                <img src="data:image;base64,<?= $jpgbase64;?>" width="80px" style="padding-left:40px;">
                             </div>
                             <div class="r2" style="padding-left:10px;width:180px;display:inline-block;padding-left:40px;">
-                                <p style="text-align: left;">Clave de usuario: 
+                                <p style="text-align: left;">RPE de usuario: 
                                     <label style="color:blue;">
                                         {{Auth::user()->rpe ?? "-" }}
                                     </label><br>

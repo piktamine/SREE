@@ -64,22 +64,27 @@ class GeneralController extends Controller
                     if($alumno->generacion == $request->gen){
                         //$examen = EGEL::find($el->claveAlumno);
                         $respuestas = RespuestasCuestionario::find($el->idRespuestas);
+                        $egels = EGEL::where('claveAlumno',$el->claveAlumno)->first();
 
                         $datos->add([
-                            'clave' => $alumno->claveAlumno,
-                            'nombre' => $alumno->nombre,
+                            'clave' => Auth::user()->rpe,
+                            'nombre' => Auth::user()->nombre,
                             'filtro' => '-',
                             'carrera' => $alumno->carrera,
                             'gen_i' => $alumno->generacion,
-                            'area1' => '-',
-                            'area2' => '-',
-                            'area3' => '-',
+                            'area1' => $egels->nivelArea1,
+                            'area2' => $egels->nivelArea2,
+                            'area3' => $egels->nivelArea3,
+                            'area4' => $egels->nivelArea4,
+                            'area5' => $egels->nivelArea5,
                             'generacion1' => '-',
                             'generacion2' => '-',
                             'generacion3' => '-',
-                            'puntaje1' => '-',
-                            'puntaje2' => '-',
-                            'puntaje3' => '-',
+                            'puntaje1' => $egels->punArea1,
+                            'puntaje2' => $egels->punArea2,
+                            'puntaje3' => $egels->punArea3,
+                            'puntaje4' => $egels->punArea4,
+                            'puntaje5' => $egels->punArea5,
                             'r1' => $respuestas->resCarrera1,
                             'r2' => $respuestas->resMaterias1,
                             'r3' => $respuestas->resMaterias2,
@@ -102,7 +107,7 @@ class GeneralController extends Controller
             //return User::all();
         }
         if($request->formato=='excel'){
-            return Excel::download(new ReportesExport, 'reporte.xlsx');
+            return Excel::download(new ReportesExport($request->fechaini,$request->fechafin,$request->gen), 'SREE Reporte.xlsx');
         }
         return back();
     }

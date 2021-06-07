@@ -11,6 +11,9 @@
                 <div class="row justify-content-center">
                     <p class="txtIdentificado">Identificado como: <strong>SUPER USUARIO</strong></p>
                 </div>
+                <div class="row justify-content-center">
+                    <p class="txtnombre">Nombre: <strong>{{ Auth::user()->name }}</strong></p>
+                </div>
                 <div class="row justify-content-center mt-3">
                     <a href="{{route('addi')}}" class="btn boton">Adición de Usuarios</a>
                 </div>
@@ -36,7 +39,7 @@
         </div>
 
         @include('Plantillas.footer')
-        
+
         @if(session('success')){{-- --}}
         <script>
             Swal.fire({
@@ -54,24 +57,24 @@
 
         </script>
         @endif
-        
+
         @if(session('error'))
-                <script>
-                    Swal.fire({
-                        icon: 'error',
-                        title: '{{session('error')}}',
-                    })
-                        .then((result) => {
-                        if (result.isConfirmed) {
-                            //location.reload();
-                            @php
-                            Session::forget('noencontrado');
-                            @endphp
-                            //window.history.back();
-                            location.reload();
-                        }
-                    })
-                </script>
+        <script>
+            Swal.fire({
+                icon: 'error',
+                title: '{{session('error')}}',
+            })
+                .then((result) => {
+                if (result.isConfirmed) {
+                    //location.reload();
+                    @php
+                    Session::forget('noencontrado');
+                    @endphp
+                    //window.history.back();
+                    location.reload();
+                }
+            })
+        </script>
         @endif
     </body>
 </html>

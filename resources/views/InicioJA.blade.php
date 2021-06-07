@@ -12,6 +12,9 @@
             <div class="row justify-content-center">
                 <p class="txtIdentificado">Identificado como: <strong>JEFE DE ÁREA</strong></p>
             </div>
+            <div class="row justify-content-center">
+                <p class="txtnombre">Nombre: <strong>{{ Auth::user()->name }}</strong></p>
+            </div>
             <div class="row justify-content-center mt-4">
                 <a href="{{route('verexamenja')}}" class="btn boton">Ver Exámenes</a>
             </div>
