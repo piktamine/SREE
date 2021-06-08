@@ -42,6 +42,7 @@ class ReportesExport implements FromView
 
                     $respuestas = RespuestasCuestionario::find($el->idRespuestas);
                     $egels = EGEL::where('claveAlumno',$el->claveAlumno)->first();
+                    
 
                     $datos->add([
                         'clave' => Auth::user()->rpe,
