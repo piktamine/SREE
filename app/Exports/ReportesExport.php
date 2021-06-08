@@ -43,36 +43,38 @@ class ReportesExport implements FromView
                     $respuestas = RespuestasCuestionario::find($el->idRespuestas);
                     $egels = EGEL::where('claveAlumno',$el->claveAlumno)->first();
                     
-
-                    $datos->add([
-                        'clave' => Auth::user()->rpe,
-                        'nombre' => Auth::user()->nombre,
-                        'filtro' => '-',
-                        'carrera' => $alumno->carrera,
-                        'gen_i' => $alumno->generacion,
-                        'area1' => $egels->nivelArea1,
-                        'area2' => $egels->nivelArea2,
-                        'area3' => $egels->nivelArea3,
-                        'area4' => $egels->nivelArea4,
-                        'area5' => $egels->nivelArea5,
-                        'generacion1' => '-',
-                        'generacion2' => '-',
-                        'generacion3' => '-',
-                        'puntaje1' => $egels->punArea1,
-                        'puntaje2' => $egels->punArea2,
-                        'puntaje3' => $egels->punArea3,
-                        'puntaje4' => $egels->punArea4,
-                        'puntaje5' => $egels->punArea5,
-                        'r1' => $respuestas->resCarrera1,
-                        'r2' => $respuestas->resMaterias1,
-                        'r3' => $respuestas->resMaterias2,
-                        'r4' => $respuestas->resServicio1,
-                        'r5' => $respuestas->resServicio2,
-                        'r6' => $respuestas->resPracticas1,
-                        'r7' => $respuestas->resPracticas2,
-                        'r8' => $respuestas->resArea1,
-                        'r9' => $respuestas->resArea2,
-                    ]);
+                    if($egels){
+                        $datos->add([
+                            'clave' => Auth::user()->rpe,
+                            'nombre' => Auth::user()->nombre,
+                            'filtro' => '-',
+                            'carrera' => $alumno->carrera,
+                            'gen_i' => $alumno->generacion,
+                            'area1' => $egels->nivelArea1,
+                            'area2' => $egels->nivelArea2,
+                            'area3' => $egels->nivelArea3,
+                            'area4' => $egels->nivelArea4,
+                            'area5' => $egels->nivelArea5,
+                            'generacion1' => '-',
+                            'generacion2' => '-',
+                            'generacion3' => '-',
+                            'puntaje1' => $egels->punArea1,
+                            'puntaje2' => $egels->punArea2,
+                            'puntaje3' => $egels->punArea3,
+                            'puntaje4' => $egels->punArea4,
+                            'puntaje5' => $egels->punArea5,
+                            'r1' => $respuestas->resCarrera1,
+                            'r2' => $respuestas->resMaterias1,
+                            'r3' => $respuestas->resMaterias2,
+                            'r4' => $respuestas->resServicio1,
+                            'r5' => $respuestas->resServicio2,
+                            'r6' => $respuestas->resPracticas1,
+                            'r7' => $respuestas->resPracticas2,
+                            'r8' => $respuestas->resArea1,
+                            'r9' => $respuestas->resArea2,
+                            'ops' => $respuestas->observaciones3,
+                        ]);
+                    }
                 }
             }
         }

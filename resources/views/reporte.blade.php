@@ -92,7 +92,7 @@
                                     Nombre: 
                                     <label style="color:blue;text-transform:uppercase;">{{Auth::user()->name ?? "-" }}
                                     </label><br>
-                                    Filtrado por: {{$d['filtro'] ?? "Genereación" }} 
+                                    Filtrado por: {{$d['filtro'] ?? "Generación" }} 
                                 </p>
                             </div>
                             <div class="r2" style="display:inline-block;padding-right:160px;">
@@ -126,44 +126,50 @@
                         <th rowspan="10" id="carrera" class="t">{{$d['carrera'] ?? "-" }}</th>
                         <th rowspan="10" id="generacion" class="t">{{$d['gen_i'] ?? "2017" }}</th>
                         <!--Rowspan debera ir cambiando conformo se agreguen respuestas-->
-                        <th rowspan="5" id="area" class="t">{{$d['area1'] ?? "-" }}</th>
-                        <th rowspan="5" id="generacion" class="t">{{$d['generacion1'] ?? "-" }}</th>
-                        <th rowspan="5" id="puntaje" class="t">{{$d['puntaje1'] ?? "-" }}</th>
+                        <th rowspan="2" id="area" class="t">Selección de sistemas computacionales para aplicaciones específicas</th>
+                        <th rowspan="2" id="generacion" class="t">{{$d['area1'] ?? "-" }}</th>
+                        <th rowspan="2" id="puntaje" class="t">{{$d['puntaje1'] ?? "-" }}</th>
                         <th class="t">{{$d['r1'] ?? "-" }}</th>
                     </tr>
                     <tr>
                         <th class="t">{{$d['r2'] ?? "-" }}</th>
                     </tr>
                     <tr>
+                        <th rowspan="2" id="area" class="t">Nuevas tecnologías para la Implementación de sistemas de cómputo</th>
+                        <th rowspan="2" id="generacion" class="t">{{$d['area2'] ?? "-" }}</th>
+                        <th rowspan="2" id="puntaje" class="t">{{$d['puntaje2'] ?? "-" }}</th>
                         <th class="t">{{$d['r3'] ?? "-" }}</th>
                     </tr>
                     <tr>
                         <th class="t">{{$d['r4'] ?? "-" }}</th>
                     </tr>
                     <tr>
+                        <th rowspan="2" id="area" class="t">Desarrollo de hardware y software asociado para aplicaciones específicas</th>
+                        <th rowspan="2" id="generacion" class="t">{{$d['area3'] ?? "-" }}</th>
+                        <th rowspan="2" id="puntaje" class="t">{{$d['puntaje3'] ?? "-" }}</th>
                         <th class="t">{{$d['r5'] ?? "-" }}</th>
                     </tr>
                     <tr>
-                        <th rowspan="2" id="area" class="t">{{$d['area2'] ?? "-" }}</th>
-                        <th rowspan="2" id="generacion" class="t">{{$d['generacion2'] ?? "-" }}</th>
-                        <th rowspan="2" id="puntaje" class="t">{{$d['puntaje2'] ?? "-" }}</th>
                         <th class="t">{{$d['r6'] ?? "-" }}</th>
                     </tr>
                     <tr>
+                        <th rowspan="2" id="area" class="t">Adaptación de hardware y/o software para aplicaciones específicas</th>
+                        <th rowspan="2" id="generacion" class="t">{{$d['area4'] ?? "-" }}</th>
+                        <th rowspan="2" id="puntaje" class="t">{{$d['puntaje4'] ?? "-" }}</th>
                         <th class="t">{{$d['r7'] ?? "-" }}</th>
-                    </tr> 
+                    </tr>
                     <tr>
-                        <th rowspan="3" id="area" class="t">{{$d['area3'] ?? "-" }}</th>
-                        <th rowspan="3" id="generacion" class="t">{{$d['generacion3'] ?? "-" }}</th>
-                        <th rowspan="3" id="puntaje" class="t">{{$d['puntaje3'] ?? "-" }}</th>
                         <th class="t">{{$d['r8'] ?? "-" }}</th>
                     </tr>
                     <tr>
+                        <th rowspan="2" id="area" class="t">Redes de cómputo para necesidades específicas</th>
+                        <th rowspan="2" id="generacion" class="t">{{$d['area5'] ?? "-" }}</th>
+                        <th rowspan="2" id="puntaje" class="t">{{$d['puntaje5'] ?? "-" }}</th>
                         <th class="t">{{$d['r9'] ?? "-" }}</th>
                     </tr>
                     <tr>
-                        <th class="t">{{$d['r9'] ?? "-" }}</th>
-                    </tr>
+                        <th class="t">{{$d['ops'] ?? "-" }}</th>
+                    </tr> 
                 </tbody>
             </table><br>
 

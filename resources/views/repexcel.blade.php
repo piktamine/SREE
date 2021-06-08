@@ -1,27 +1,28 @@
 <table>
     <thead>
     <tr>
-        <th>carrera</th>
-        <th>gen</th>
-        <th>N area1</th>
-        <th>N area2</th>
-        <th>N area3</th>
-        <th>N area4</th>
-        <th>N area5</th>
-        <th>puntaje1</th>
-        <th>puntaje2</th>
-        <th>puntaje3</th>
-        <th>puntaje4</th>
-        <th>puntaje5</th>
-        <th>res1</th>
-        <th>res2</th>
-        <th>res3</th>
-        <th>res4</th>
-        <th>res5</th>
-        <th>res6</th>
-        <th>res7</th>
-        <th>res8</th>
-        <th>res9</th>
+        <th>Carrera</th>
+        <th>Generación</th>
+        <th>Nivel area 1</th>
+        <th>Nivel area 2</th>
+        <th>Nivel area 3</th>
+        <th>Nivel area 4</th>
+        <th>Nivel area 5</th>
+        <th>Puntaje area 1</th>
+        <th>Puntaje area 2</th>
+        <th>Puntaje area 3</th>
+        <th>Puntaje area 4</th>
+        <th>Puntaje area 5</th>
+        <th>Respuesta 1</th>
+        <th>Respuesta 2</th>
+        <th>Respuesta 3</th>
+        <th>Respuesta 4</th>
+        <th>Respuesta 5</th>
+        <th>Respuesta 6</th>
+        <th>Respuesta 7</th>
+        <th>Respuesta 8</th>
+        <th>Respuesta 9</th>
+        <th>Observaciones</th>
     </tr>
     </thead>
     <tbody>
@@ -48,6 +49,7 @@
             <td>{{ $d['r7'] }}</td>
             <td>{{ $d['r8'] }}</td>
             <td>{{ $d['r9'] }}</td>
+            <td>{{ $d['ops'] }}</td>
         </tr>
     @endforeach
     </tbody>
