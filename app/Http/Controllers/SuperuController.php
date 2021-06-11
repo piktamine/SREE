@@ -149,6 +149,7 @@ class SuperuController extends Controller
     }
 
     public function agendar(){//vista de Agendar Examenes
+        $hayalumno = false;
 
         //Todos los usuarios que no tienen el rol: capturista y SU
         $usuariosc = $users = User::role('coordinador')->get();
@@ -157,7 +158,9 @@ class SuperuController extends Controller
         $usuarios = $usuariosc->merge($usuarioss)->merge($usuariosj);
 
         //return $usuarios;
-        return view('Per.Calendarizacion_Examenes')->with('sinodales',$usuarios);
+        return view('Per.Calendarizacion_Examenes')
+            ->with('sinodales',$usuarios)
+            ->with('hayalumno',$hayalumno);
     }
 
     public function agendare(Request $request){//Guarda la info de el examen
@@ -232,6 +235,24 @@ class SuperuController extends Controller
 
         return redirect(route('superu'))->with('success','Examen agendado correctamente');
         //*/ 
+    }
+    
+    public function buscaru(Request $request){
+        //$buscaru
+        $alumno = Alumno::find($request->clave);
+        $hayalumno = true;
+        
+        //Todos los usuarios que no tienen el rol: capturista y SU
+        $usuariosc = $users = User::role('coordinador')->get();
+        $usuarioss = $users = User::role('sinodal')->get();
+        $usuariosj = $users = User::role('jefearea')->get();
+        $usuarios = $usuariosc->merge($usuarioss)->merge($usuariosj);
+
+        //return $usuarios;
+        return view('Per.Calendarizacion_Examenes')
+            ->with('sinodales',$usuarios)
+            ->with('alumno',$alumno)
+            ->with('hayalumno',$hayalumno);
     }
 
     public function mostrarex(){

@@ -32,6 +32,8 @@ Route::get('/su/mostrarexamenesprofesionales/eliminar/{id}',[SuperuController::c
 //agendar examenes
 Route::get('/su/agendarexamenesprofesionales',[SuperuController::class,'agendar'])->middleware('role:superu')->name('agendarexprof');
 Route::post('/su/agendarexamenesprofesionales',[SuperuController::class,'agendare'])->middleware('role:superu')->name('agendarexprofpost');
+Route::get('/su/agendarexamenesprofesionales/buscarusuario',[SuperuController::class,'buscaru'])->middleware('role:superu')->name('ae_buscaru');
+
 
 //Registrar cuestionario
 Route::get('/su/Dardealtaformatoderetroalimentacion',[SuperuController::class,'mostrarcues'])->middleware('role:superu')->name('mostrarcues');
