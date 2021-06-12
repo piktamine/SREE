@@ -78,7 +78,7 @@ class SinodalController extends Controller
 
         switch($rol){
             case 'sinodal':
-                return redirect(route('sinodal'));
+                return redirect(route('mesinodal'))->with('success','Retroalimentación Finalizada');
                 break;
 
             case 'jefearea':

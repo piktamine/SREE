@@ -63,9 +63,9 @@
                             <p style="font-size: medium;" id="Scarrera">
                                 <strong>Estado: </strong>
                                 @if($r->resCarrera1==null){{-- para verificar seccion Carrera --}}
-                                Sin contestar
+                                   <label class="text-danger">Sin contestar</label>
                                 @else    
-                                Contestado
+                                    <label class="text-success">Contestado</label>
                                 @endif
                             </p> <!--Tanto en esta sección cómo en la siguiente se tendria que señalar si los respectivos cuestionarios ya fueron contestados o no-->
                         </div>
@@ -103,9 +103,9 @@
                             <p style="font-size: medium;" id="Spracticas">
                                 <strong>Estado: </strong> 
                                 @if($r->resServicio1==null){{-- para verificar seccion PP --}}
-                                Sin contestar
+                                    <label class="text-danger">Sin contestar</label>
                                 @else    
-                                Contestado
+                                    <label class="text-success">Contestado</label>
                                 @endif
                             </p>
                         </div>
@@ -143,9 +143,9 @@
                             <p style="font-size: medium;" id="Scarrera">
                                 <strong>Estado: </strong>
                                 @if($r->resArea1==null){{-- para verificar seccion Egel --}}
-                                Sin contestar
+                                    <label class="text-danger">Sin contestar</label>
                                 @else    
-                                Contestado
+                                    <label class="text-success">Contestado</label>
                                 @endif
                             </p> <!--Tanto en esta sección cómo en la siguiente se tendria que señalar si los respectivos cuestionarios ya fueron contestados o no-->
                         </div>

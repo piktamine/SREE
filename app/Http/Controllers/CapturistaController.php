@@ -29,6 +29,7 @@ class CapturistaController extends Controller
     
     public function buscaru(Request $request){
         //$buscaru
+        //$mensaje = "Registro exitoso"
         $alumno = Alumno::find($request->clave);
         $hayalumno = true;
 
@@ -90,7 +91,7 @@ class CapturistaController extends Controller
                 ->with('erroralumno','El alumno no existe');
         }
 
-        return redirect(route('capturista'));
+        return redirect(route('capturar'))->with('success','Registro exitoso');
 
         //return $datosdelform;
     }

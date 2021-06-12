@@ -77,7 +77,7 @@ class CoordinadorController extends Controller
         $prol = Auth::user()->roles->pluck('name');//obtiene arreglo con el rol
         $rol = $prol[0];//arreglo a string
 
-        return redirect(route('coordinador'));
+        return redirect(route('verexamenc'))->with('success','Retroalimentación Finalizada');
 
     }
 

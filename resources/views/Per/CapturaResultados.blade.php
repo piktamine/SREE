@@ -265,6 +265,24 @@
         </div>
         @endif
 
+        @if(session('success')){{-- --}}
+        <script>
+            Swal.fire({
+                icon: 'success',
+                title: '{{session('success')}}',
+                showConfirmButton: false,
+                timer: 2000
+            }).then((result) => {
+                /* Esto checa que haya finalizado el timer*/
+                if (result.dismiss === Swal.DismissReason.timer) {
+                    //console.log('I was closed by the timer')
+                    location.reload();
+                }
+            })
+
+        </script>
+        @endif
+
         @include('Plantillas.footer')
     </body>
 </html>

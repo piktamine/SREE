@@ -4,12 +4,15 @@
         @include('Plantillas.head',['titulo' => 'SREE - Examenes agendados'])
     </head>
     <body>
+        @php
+            $alum = null;
+        @endphp
 
         @include('Plantillas.header')
 
         <div class="row m-0 p-0 mt-5">
             <div class="container">
-                
+
                 <h3 class="titles mt-3">Tus examenes programados</h3>
                 <hr>
 
@@ -21,20 +24,20 @@
                 @if($rol=='sinodal' || $rol=='jefearea' || $rol=='coordinador')
 
                     <div class="row mt-5">
-                        
+
                         @if(!empty($sinodales) || !empty($examenes))
 
-                        @foreach($sinodales as $s)
-                            @foreach($examenes as $e)
-                                @if($e->idExamen == $s->idExamen && !$e->realizoCuestionario) 
-                                    @foreach($alumnos as $a)
-                                        @if($e->claveAlumno==$a->claveAlumno)
-                                            @php
-                                                $alum = $a;
-                                            @endphp
-                                            @break
-                                        @endif
-                                    @endforeach   
+                            @foreach($sinodales as $s)
+                                @foreach($examenes as $e)
+                                    @if($e->idExamen == $s->idExamen && !$e->realizoCuestionario) 
+                                        @foreach($alumnos as $a)
+                                            @if($e->claveAlumno==$a->claveAlumno)
+                                                @php
+                                                    $alum = $a;
+                                                @endphp
+                                                @break
+                                            @endif
+                                        @endforeach   
 
                                     <div class="card w-100 mt-5">        
                                         <div class="card-body">
@@ -74,13 +77,13 @@
                                                         <div class="col-6">
                                                             <a href="
                                                                      @role('sinodal')
-                                                                         {{route('retro',$alum)}}
+                                                                     {{route('retro',$alum)}}
                                                                      @endrole
                                                                      @role('coordinador')
-                                                                         {{route('retroc',$alum)}}
+                                                                     {{route('retroc',$alum)}}
                                                                      @endrole
                                                                      @role('jefearea')
-                                                                         {{route('retroj',$alum)}}
+                                                                     {{route('retroj',$alum)}}
                                                                      @endrole
                                                                      ">
                                                                 <button class="btn btnFinalizar">
@@ -94,38 +97,55 @@
                                             </div>
                                         </div>         
 
-                        </div>
-                        @endif                                                                                   
-
+                                    </div>
+                                    @endif  
                                 @endforeach                                                
                             @endforeach
-                            
-                            @else
-                                <div class="row mx-auto">No Existen cuestionarios por validar</div>
-                            @endif
+                        @endif
                     @endif
-
+                    
+                    @if(!$alum)
+                        <div class="row mx-auto">No Existen cuestionarios por validar</div>
+                    @endif
                 </div>
             </div>
         </div>
 
         <div class="row m-0 p-0 text-center align-items-center justify-content-center mt-5">
             <a href="
-                @role('sinodal')
-                    {{route('sinodal')}}
-                @endrole
-                @role('coordinador')
-                    {{route('coordinador')}}
-                @endrole
-                @role('jefearea')
-                    {{route('jefearea')}}
-                @endrole
-                ">
-                    <button class="btn btnFinalizar">
-                        Regresar
-                    </button>
+                     @role('sinodal')
+                     {{route('sinodal')}}
+                     @endrole
+                     @role('coordinador')
+                     {{route('coordinador')}}
+                     @endrole
+                     @role('jefearea')
+                     {{route('jefearea')}}
+                     @endrole
+                     ">
+                <button class="btn btnFinalizar">
+                    Regresar
+                </button>
             </a>
         </div>
+        
+        @if(session('success')){{-- --}}
+        <script>
+            Swal.fire({
+                icon: 'success',
+                title: '{{session('success')}}',
+                showConfirmButton: false,
+                timer: 2000
+            }).then((result) => {
+                /* Esto checa que haya finalizado el timer*/
+                if (result.dismiss === Swal.DismissReason.timer) {
+                    //console.log('I was closed by the timer')
+                    location.reload();
+                }
+            })
+
+        </script>
+        @endif
 
         @include('Plantillas.footer')
     </body>

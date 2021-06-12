@@ -23,6 +23,7 @@
             </div>            
         </div>
     </div>
+    
     @include('Plantillas.footer')
 </body>
 </html>

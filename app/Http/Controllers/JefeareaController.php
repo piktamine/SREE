@@ -77,7 +77,7 @@ class JefeareaController extends Controller
         $prol = Auth::user()->roles->pluck('name');//obtiene arreglo con el rol
         $rol = $prol[0];//arreglo a string
 
-        return redirect(route('jefearea'));
+        return redirect(route('verexamenja'))->with('success','Retroalimentación Finalizada');
     }
 
     public function seccar($clave){//Seccion Carrera
