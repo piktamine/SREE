@@ -18,9 +18,6 @@
                         <div class="card-body">
                             <div class="row">
                                 <!--Los datos a continuación serian los del usuario-->
-                                <div class="col-md-3">
-                                    <img class="centrador" src="{{ asset('foto.png') }}" height="100px" width="100px" id="foto">{{-- extraer de la api --}}
-                                </div>
                                 <div class="col-md-6">
                                     <p><strong>Nombre:</strong> 
 
@@ -61,7 +58,7 @@
 
                                     </p>
                                 </div>
-                                <div class="col-md-3">
+                                <div class="col-md-6">
                                     {{-- Datos enviados previamento --}}
                                     <div class="row align-items-center h-100">
                                         <div class="col-6">

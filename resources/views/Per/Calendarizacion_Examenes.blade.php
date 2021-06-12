@@ -7,12 +7,13 @@
     <body>
 
         @include('Plantillas.header')
+        
+        <h5 class="titles mt-5">Agendar Examen Profesional</h5>
 
         @if($hayalumno)
         <div class="container mt-5">
             <form action="{{route('agendarexprofpost')}}" method="post">
                 @csrf
-                <h5 class="titles">Agendar Examen Profesional</h5>
 
                 <div class="row mt-5">
 
@@ -35,11 +36,11 @@
                 </div>
                 <div class="row mt-3">
                     <p class="mt-2">Fecha</p>
-                    <input class="answer" type="date" name="fecha">
+                    <input class="answer" type="date" min="{{date('Y-m-d')}}" max="v" name="fecha">
                 </div>
                 <div class="row mt-3">
                     <p class="mt-2">Hora</p>
-                    <input class="answer" type="time" name="hora">
+                    <input class="answer" type="time" min="12:00" max="18:00" name="hora">
                 </div>
 
                 {{-- 4Sinodales --}}
@@ -126,6 +127,11 @@
                 <input class="answer w-50" type="text" name="clave"><br>
                 <button class="btn btnFinalizar mt-5" type="submit">Buscar Usuario</button>
             </form>
+            <div class="row justify-content-center mt-5 mb-2">
+                    <div class="col-md-12 text-center align-items-center justify-content-center mb-3">
+                        <a href="{{ route(('superu')) }}" class="btn btnFinalizar">Regresar</a>
+                    </div>
+            </div>
         </div>
         @endif
 

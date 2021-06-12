@@ -22,7 +22,20 @@ use App\Models\RespuestasCuestionario;
 class CapturistaController extends Controller
 {
     public function capturar(){
-        return view('Per.CapturaResultados');
+        $hayalumno = false;
+        return view('Per.CapturaResultados')
+            ->with('hayalumno',$hayalumno);
+    }
+    
+    public function buscaru(Request $request){
+        //$buscaru
+        $alumno = Alumno::find($request->clave);
+        $hayalumno = true;
+
+        //return $usuarios;
+        return view('Per.CapturaResultados')
+            ->with('alumno',$alumno)
+            ->with('hayalumno',$hayalumno);
     }
 
     public function storecapturar(Request $request){//capturista

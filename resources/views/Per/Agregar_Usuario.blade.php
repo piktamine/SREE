@@ -92,15 +92,6 @@
                 <div class="card-body">
                     <div class="row">
                         <!--Los datos a continuación serian los del usuario-->
-                        <div class="col-md-3">
-                            <img class="centrador"
-                                @if(isset($datos))
-                                    src="{{ asset('foto.png') }}" 
-                                @else
-                                    src="{{ asset('perfil.jpg') }}"
-                                @endif
-                            height="100px" width="100px" id="foto">
-                        </div>
                         <div class="col-md-6">
                             <p>Nombre: 
 
@@ -124,7 +115,7 @@
 
                             </p>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-md-6">
 
                             {{-- Datos enviados previamento --}}
 

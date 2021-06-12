@@ -4,7 +4,10 @@
         @include('Plantillas.head',['titulo' => 'SREE - Alta Cuestionario'])
     </head>
     <body>
+    
         @include('Plantillas.header')
+        
+        <h5 class="titles mt-5">Dar de alta cuestionario</h5>
 
         @if($datos->isEmpty())
 

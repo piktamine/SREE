@@ -9,6 +9,9 @@
 
         <div class="row m-0 p-0 mt-5">
             <div class="container">
+                
+                <h3 class="titles mt-3">Tus examenes programados</h3>
+                <hr>
 
                 @php
                     $prol = Auth::user()->roles->pluck('name');//obtiene arreglo con el rol
@@ -16,45 +19,6 @@
                 @endphp
 
                 @if($rol=='sinodal' || $rol=='jefearea' || $rol=='coordinador')
-                    <div class="row text-center align-items-center justify-content-center">
-                        <div class="col-md-4">
-                            <img src="{{ asset('perfil.jpg') }}" class="centrador" alt="..." width="200">
-                        </div>
-                        <div class="col-8">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="row">
-                                        <p>Información del Usuario
-                                        </p>
-                                    </div>
-                                    <div class="row">
-                                        <p><strong>Nombre:</strong>
-                                            {{ Auth::user()->name }}
-                                        </p>
-                                    </div>
-                                    <div class="row">
-                                        <p><strong>Email:</strong>
-                                            {{ Auth::user()->email }}
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="row">
-                                        <p><strong>Fecha:</strong>
-                                            {{ date('d-m-Y') }}
-                                        </p>
-                                    </div>
-                                    <div class="row">
-                                        <p><strong>Hora:</strong>
-                                            {{ date('H:i:s') }}
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <hr>
 
                     <div class="row mt-5">
                         
@@ -72,14 +36,11 @@
                                         @endif
                                     @endforeach   
 
-                                    <div class="card w-100">        
+                                    <div class="card w-100 mt-5">        
                                         <div class="card-body">
                                             <div class="row">
 
                                                 <!--Los datos a continuación serian los del usuario-->
-                                                <div class="col-md-3">
-                                                    <img class="centrador" src="{{ asset('foto.png') }}" height="100px" width="100px" id="foto"><!-- extraer de la api -->
-                                                </div>
                                                 <div class="col-md-6">
                                                     <p><strong>Nombre:</strong><!-- Nombre de el alumno de ese examen --> 
                                                         {{ $alum->nombre }}
@@ -107,7 +68,7 @@
                                                     </p>
 
                                                 </div>
-                                                <div class="col-md-3">
+                                                <div class="col-md-6 d-flex justify-content-center">
                                                     <!-- Datos enviados previamento -->
                                                     <div class="row align-items-center h-100">
                                                         <div class="col-6">
@@ -132,7 +93,9 @@
                                                 </div>
                                             </div>
                                         </div>         
-                                    @endif                                                                                   
+
+                        </div>
+                        @endif                                                                                   
 
                                 @endforeach                                                
                             @endforeach
@@ -140,8 +103,6 @@
                             @else
                                 <div class="row mx-auto">No Existen cuestionarios por validar</div>
                             @endif
-
-                        </div>
                     @endif
 
                 </div>

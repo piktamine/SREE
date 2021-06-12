@@ -8,3 +8,5 @@ use App\Http\Controllers\CapturistaController;
 Route::get('/capturista/captura',[CapturistaController::class,'capturar'])
 ->middleware('role:capturista')->name('capturar');//Capturar resultados (capturista)
 Route::post('/capturista/captura',[CapturistaController::class,'storecapturar'])->name('capturasubmit');//Capturar resultados (capturista)
+Route::get('/capturista/buscaru',[CapturistaController::class,'buscaru'])->name('cap_buscaru');//Capturar resultados (capturista)
+

@@ -6,31 +6,31 @@
     <body>
 
         @include('Plantillas.header')
+        
+        <h5 class="titles mt-5">Examenes agendados</h5>
 
-       @if(isset($examenes))
+        @if(isset($examenes))
         <div class="row mt-5">
             <div class="container">
 
                 <div class="row">
 
-                    <div class="card w-100">
-                        {{-- AQUI VAN LOS DATOS --}}
+                    {{-- AQUI VAN LOS DATOS --}}
 
-                        @foreach($examenes as $e)
+                    @foreach($examenes as $e)
+                    @if(!$e->realizoCuestionario)
+                    <div class="card w-100 mt-5">
                         <div class="card-body">
                             <div class="row">
                                 <!--Los datos a continuación serian los del usuario-->
-                                <div class="col-md-3">
-                                    <img class="centrador" src="{{ asset('foto.png') }}" height="100px" width="100px" id="foto">{{-- extraer de la api --}}
-                                </div>
                                 <div class="col-md-6">
                                     <p><strong>Nombre:</strong>{{-- Nombre de el alumno de ese examen --}} 
 
                                         @foreach($alumnos as $a)
-                                            @if($e->claveAlumno==$a->claveAlumno)
-                                                {{ $a->nombre }}
-                                            @break
-                                            @endif
+                                        @if($e->claveAlumno==$a->claveAlumno)
+                                        {{ $a->nombre }}
+                                        @break
+                                        @endif
                                         @endforeach
                                     </p>
                                     <p style="font-size: medium;" id="correo"><strong>Fecha de inicio:</strong> 
@@ -48,12 +48,12 @@
                                     </p>
                                     <p style="font-size: medium;" id="correo"><strong>Sinodales:</strong>
 
-
+                                    <br>
                                         @foreach($sinodales as $s)
                                             @if($e->idExamen==$s->idExamen)
                                                 @foreach($usuarios as $u) 
                                                     @if($s->rpe == $u->rpe)
-                                                    {{ $u->name }}
+                                                        {{ $u->name }} <br>
                                                     @endif
                                                 @endforeach 
                                             @endif
@@ -67,7 +67,7 @@
 
                                     </p>
                                 </div>
-                                <div class="col-md-3">
+                                <div class="col-md-6">
                                     {{-- Datos enviados previamento --}}
                                     <div class="row align-items-center h-100">
                                         <div class="col-6">
@@ -90,72 +90,74 @@
                                 </div>
                             </div>
                         </div>
-                        @endforeach
+                    </div>{{-- aa --}}
+                    
+                    @endif
+                    @endforeach
 
-                        @if(session('borrar'))
+                    @if(session('borrar'))
 
-                        <script>
-                            Swal.fire(
-                                'Cancelado!',
-                                'Examen cancelado eliminado con exito',
-                                'success'
-                            )
-                                .then((result) => {
+                    <script>
+                        Swal.fire(
+                            'Cancelado!',
+                            'Examen cancelado eliminado con exito',
+                            'success'
+                        )
+                            .then((result) => {
+                            if (result.isConfirmed) {
+                                //location.reload();
+                                //window.history.back();
+                                location.reload();
+                            }
+                        })
+                        //location.reload();
+                    </script>
+
+                    @endif
+
+                    <script>
+
+                        $('.eliminar').submit(function(e){
+                            e.preventDefault();
+
+                            Swal.fire({
+                                title: 'Estas seguro de cancelar este examen?',
+                                text: "Esta accion no se puede revertir",
+                                icon: 'Alerta',
+                                showCancelButton: true,
+                                confirmButtonColor: '#3085d6',
+                                cancelButtonColor: '#d33',
+                                confirmButtonText: 'Si, cancelar examen!',
+                                cancelButtonText: 'Cancelar'
+                            }).then((result) => {
                                 if (result.isConfirmed) {
-                                    //location.reload();
-                                    //window.history.back();
-                                    location.reload();
+                                    this.submit();
                                 }
                             })
-                            //location.reload();
-                        </script>
 
-                        @endif
+                        });
 
-                        <script>
+                        ///*
+                        //*/
 
-                            $('.eliminar').submit(function(e){
-                                e.preventDefault();
-
-                                Swal.fire({
-                                    title: 'Estas seguro de cancelar este examen?',
-                                    text: "Esta accion no se puede revertir",
-                                    icon: 'Alerta',
-                                    showCancelButton: true,
-                                    confirmButtonColor: '#3085d6',
-                                    cancelButtonColor: '#d33',
-                                    confirmButtonText: 'Si, cancelar examen!',
-                                    cancelButtonText: 'Cancelar'
-                                }).then((result) => {
-                                    if (result.isConfirmed) {
-                                        this.submit();
-                                    }
-                                })
-
-                            });
-
-                            ///*
-                            //*/
-
-                        </script>
-                    </div>{{-- aa --}}
+                    </script>
 
                 </div>
             </div>
         </div>
-        
+
         @elseif(!isset($examenes))
-           
-            <div class="container mt-5">
-                <div class="card">
-                    <div class="card-body text-center align-items-center justify-content-center">
-                        No existen examenes programados
-                        <br>
-                        Si deseas programar un examen da click aqui abajo <br>
-                        <a href="{{ route('agendarexprof') }}">Programar examen</a>
-                    </div>
+
+        <div class="container mt-5">
+            <div class="card">
+                <div class="card-body text-center align-items-center justify-content-center">
+                    No existen examenes programados
+                    <br>
+                    Si deseas programar un examen da click aqui abajo <br>
+                    <a href="{{ route('agendarexprof') }}">Programar examen</a>
                 </div>
             </div>
+        </div>
         @endif
 
         <div class="row justify-content-center mt-5">
