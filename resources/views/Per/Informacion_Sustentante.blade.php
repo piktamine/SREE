@@ -113,19 +113,19 @@
                             <div class="row mt-3">
                                 <a href="
                                          @role('sinodal')
-                                         {{route('secpp',$al)}}
+                                             {{route('secpp',$al)}}
                                          @endrole
                                          @role('coordinador')
-                                         {{route('secppc',$al)}}
+                                             {{route('secppc',$al)}}
                                          @endrole
                                          @role('jefearea')
-                                         {{route('secppj',$al)}}
+                                             {{route('secppj',$al)}}
                                          @endrole
                                          " class="btn btnFinalizar">
                                     @if($r->resServicio1==null){{-- para verificar seccion PP --}}
-                                    Iniciar
+                                        Iniciar
                                     @else    
-                                    Editar
+                                        Editar
                                     @endif
                                 </a>
                             </div>
