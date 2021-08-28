@@ -1,6 +1,7 @@
 <table>
     <thead>
     <tr>
+        <th>alumno</th>
         <th>Carrera</th>
         <th>Generación</th>
         <th>Nivel area 1</th>
@@ -28,6 +29,7 @@
     <tbody>
     @foreach($datos as $d)
         <tr>
+            <td>{{ $d['alumno'] }}</td>
             <td>{{ $d['carrera'] }}</td>
             <td>{{ $d['gen_i'] }}</td>
             <td>{{ $d['area1'] }}</td>

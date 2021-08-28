@@ -58,7 +58,6 @@ class CapturistaController extends Controller
         ]);
 
         //return "Hola";
-
         $datosdelform = $request;
 
         $al = Alumno::find($request->nombre); //el nombre del form es la clave unica

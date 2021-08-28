@@ -48,6 +48,7 @@ class ReportesExport implements FromView
                             'clave' => Auth::user()->rpe,
                             'nombre' => Auth::user()->nombre,
                             'filtro' => '-',
+                            'alumno' => $alumno->nombre,
                             'carrera' => $alumno->carrera,
                             'gen_i' => $alumno->generacion,
                             'area1' => $egels->nivelArea1,

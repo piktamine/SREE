@@ -57,6 +57,7 @@ class GeneralController extends Controller
             $datos = collect();//crea coleccion vacia para guardar todos los datos
 
             ///*
+
             foreach($examenes_lista as $el){
                 if($el->idRespuestas){
                     $alumno = Alumno::find($el->claveAlumno);
@@ -71,6 +72,7 @@ class GeneralController extends Controller
                                 'clave' => Auth::user()->rpe,
                                 'nombre' => Auth::user()->nombre,
                                 'filtro' => '-',
+                                'alumno' => $alumno->nombre,
                                 'carrera' => $alumno->carrera,
                                 'gen_i' => $alumno->generacion,
                                 'area1' => $egels->nivelArea1,
