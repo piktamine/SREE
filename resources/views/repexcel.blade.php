@@ -1,7 +1,7 @@
 <table>
     <thead>
     <tr>
-        <th>alumno</th>
+        <th>Alumno</th>
         <th>Carrera</th>
         <th>Generación</th>
         <th>Nivel area 1</th>
